@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultrasonic Sensor Value</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      setInterval(getSensorValue, 1000); // Update the sensor value every second
+
+      function getSensorValue() {
+        $.ajax({
+          url: '/sensor', // Endpoint on the NodeMCU to retrieve the sensor value
+          method: 'GET',
+          success: function(data) {
+            $('#sensor-value').text('Distance: ' + data + ' cm'); // Update the sensor value on the webpage
+          },
+          error: function(xhr, status, error) {
+            console.log('Error: ' + error);
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Ultrasonic Sensor Value:</h1>
+  <p id="sensor-value"></p>
+</body>
+</html>

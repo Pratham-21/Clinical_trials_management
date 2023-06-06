@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clinical Trial Documents Verification</title>
+	<link rel="stylesheet" type="text/css" href="verification.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Clinical Trial Documents Verification</h1>
+		<p>Please upload the following documents to verify your eligibility for the clinical trial:</p>
+		<form id="verification-form">
+			<label for="name">Full Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="dob">Date of Birth:</label>
+			<input type="date" id="dob" name="dob" required>
+			<label for="id">ID Number:</label>
+			<input type="text" id="id" name="id" required>
+			<label for="medical">Medical History:</label>
+			<input type="file" id="medical" name="medical" accept=".pdf,.doc,.docx" required>
+			<label for="insurance">Proof of Insurance:</label>
+			<input type="file" id="insurance" name="insurance" accept=".pdf,.doc,.docx" required>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<script src="verification.js">
+
+	</script>
+</body>
+</html>
